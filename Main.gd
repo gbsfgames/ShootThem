@@ -30,15 +30,18 @@ func letters_deleter(label,prop):
 	var key1 = prop
 	label.queue_free()
 func enemy_eliminated(nodo):
-	print(total_enemies)
-	print(nodo.name)
+	print("cantidad de enemigos en pantalla antes %s" % total_enemies.size())
+	#print(total_enemies)
+	#print(nodo.name)
 	if nodo:
 		nodo.queue_free()
-		total_enemies.pop_front().queue_free()
+		if nodo in total_enemies:
+			total_enemies.erase(nodo)
+		#total_enemies.pop_front().queue_free()
 		
 	if total_enemies.size()==0:
 		pass_level("Level 2")
-		
+	print("cantidad de enemigos en pantalla despues %s" % total_enemies.size())
 func pass_level(level):
 	if level == "Level 2" and count == 0:
 		#var basic_enemy = load("res://basic_enemy.tscn")
