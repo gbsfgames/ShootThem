@@ -29,19 +29,31 @@ func letters_deleter(label,prop):
 	#print("objeto %s , key %s" % [object,key])
 	var key1 = prop
 	label.queue_free()
-
+func enemy_eliminated(nodo):
+	print(total_enemies)
+	print(nodo.name)
+	if nodo:
+		nodo.queue_free()
+		total_enemies.pop_front().queue_free()
+		
+	if total_enemies.size()==0:
+		pass_level("Level 2")
+		
 func pass_level(level):
-	total_enemies.pop_front().queue_free()
-#	if level == "Level 2" and count == 0:
-#		#var basic_enemy = load("res://basic_enemy.tscn")
-#		var basic_enemy_1 = basic_enemy.instance() 
-#		var basic_enemy_2 = basic_enemy.instance() 
-#		var basic_enemy_3 = basic_enemy.instance() 
-#		basic_enemy_1.global_position = $enemy_positions/two.global_position
-#		basic_enemy_2.global_position = $enemy_positions/one.global_position
-#		basic_enemy_3.global_position = $enemy_positions/tree.global_position
-#		self.add_child(basic_enemy_1)
-#		self.add_child(basic_enemy_2)
-#		self.add_child(basic_enemy_3)
-#		count = 1
-#	print("Error no se pudo cargar")
+	if level == "Level 2" and count == 0:
+		#var basic_enemy = load("res://basic_enemy.tscn")
+		var basic_enemy_1 = basic_enemy.instance() 
+		var basic_enemy_2 = basic_enemy.instance() 
+		var basic_enemy_3 = basic_enemy.instance() 
+		basic_enemy_1.global_position = $enemy_positions/two.global_position
+		basic_enemy_2.global_position = $enemy_positions/one.global_position
+		basic_enemy_3.global_position = $enemy_positions/tree.global_position
+#call deferred ese llama para evitar el error de quereer llamar a una funcion varias veses al mismo tiempo
+		self.call_deferred("add_child",basic_enemy_1)
+		self.call_deferred("add_child",basic_enemy_2)
+		self.call_deferred("add_child",basic_enemy_3)
+		total_enemies.append(basic_enemy_1)
+		total_enemies.append(basic_enemy_2)
+		total_enemies.append(basic_enemy_3)
+		count = 1
+	print("Error no se pudo cargar")
