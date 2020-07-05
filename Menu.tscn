@@ -68,7 +68,6 @@ position = Vector2( 1167.43, 282.994 )
 scale = Vector2( 7.54827, 5.64368 )
 frames = ExtResource( 5 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="Background" type="TextureRect" parent="."]
