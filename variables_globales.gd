@@ -1,10 +1,11 @@
 extends Node
 
 #--------   PLAYER   -------------
+onready var pj = {"life":100,"score":0,"ship":"blue_ship"}
 onready var velocidad = Vector2()
 onready var puntaje = 0
 onready var puntaje_nueva_vida = 0
-onready var vida = 100
+#onready var life = 100
 const gravedad = 400
 const speed = 200
 onready var teclaA = 65

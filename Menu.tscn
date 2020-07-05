@@ -1,0 +1,166 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Ship_Selection.tres" type="Theme" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://resources/popup_theme.tres" type="Theme" id=3]
+[ext_resource path="res://resources/sprites/pantalla_inicio/inicio1.png" type="Texture" id=4]
+[ext_resource path="res://Sprite_Frames/space_framess.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://resources/sprites/Start_buttons/play_button_pressed1.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/Start_buttons/play_button.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/Start_buttons/settings_button_pressed1.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/Start_buttons/exit_button1.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/Start_buttons/settings_button1.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/Start_buttons/exit_button_pressed1.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/Start_buttons/exit_button_hover.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/Start_buttons/play_button_hover1.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/Start_buttons/settings_button_hover1.png" type="Texture" id=14]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 36, 36 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 36, 36 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 36, 36 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 23, 23 )
+
+[node name="Menu" type="Control"]
+pause_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space_animation" type="AnimatedSprite" parent="."]
+position = Vector2( 1167.43, 282.994 )
+scale = Vector2( 7.54827, 5.64368 )
+frames = ExtResource( 5 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -720.0
+margin_top = -400.0
+margin_right = 720.0
+rect_min_size = Vector2( 1440, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="Button" parent="NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 585.88
+margin_top = -148.544
+margin_right = 831.88
+margin_bottom = 97.4557
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.0509804, 0.333333, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.227451, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Options" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 170.531
+margin_top = -55.2401
+margin_right = 320.531
+margin_bottom = 94.7599
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 7 )
+custom_colors/font_color_hover = Color( 0.0509804, 0.333333, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.227451, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Exit" type="Button" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -342.17
+margin_top = -55.4451
+margin_right = -192.17
+margin_bottom = 94.5549
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/font_color_hover = Color( 0.0509804, 0.333333, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.227451, 0.607843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+margin_right = 676.0
+margin_bottom = 187.0
+theme = ExtResource( 3 )
+popup_exclusive = true
+window_title = "Warning"
+dialog_text = "Do you want to exit?"
+dialog_hide_on_ok = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="NinePatchRect/Game" to="." method="_on_Game_pressed"]
+[connection signal="pressed" from="NinePatchRect/Exit" to="." method="_on_Exit_pressed"]

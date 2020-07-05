@@ -1,0 +1,200 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Ship_Selection.tres" type="Theme" id=1]
+[ext_resource path="res://Ship_Selection.gd" type="Script" id=2]
+[ext_resource path="res://resources/sprites/no selection.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/select_ship_screen/luz.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/select_ship_screen/fondo.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/select_ship_screen/Button_hover.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/select_ship_screen/Button_stand.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/select_ship_screen/Button_press.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="ButtonGroup" id=6]
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.219608, 0.560784, 0.831373, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.0745098, 0.470588, 0.917647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.219608, 0.560784, 0.831373, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.0313726, 0.596078, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.219608, 0.560784, 0.831373, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.0745098, 0.470588, 0.917647, 1 )
+
+[node name="Ship_Selection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftContainer" type="NinePatchRect" parent="HBoxContainer"]
+margin_right = 740.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 740, 720 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/LeftContainer"]
+margin_left = 83.4851
+margin_top = 83.4851
+margin_right = 638.485
+margin_bottom = 163.485
+text = "Select your ship"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Classic" type="Button" parent="HBoxContainer/LeftContainer"]
+margin_left = 494.0
+margin_top = 317.0
+margin_right = 740.0
+margin_bottom = 408.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.0509804, 0.333333, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.227451, 0.607843, 1 )
+text = "Blue Ship"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Basic" type="Button" parent="HBoxContainer/LeftContainer"]
+margin_left = 494.0
+margin_top = 427.048
+margin_right = 740.0
+margin_bottom = 513.049
+custom_styles/focus = SubResource( 5 )
+custom_colors/font_color_hover = Color( 0.0509804, 0.333333, 0.929412, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.227451, 0.607843, 1 )
+group = SubResource( 6 )
+text = "Red Ship"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play_button" type="Button" parent="HBoxContainer/LeftContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -266.015
+margin_top = -148.0
+margin_right = 233.985
+margin_bottom = -48.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right Container" type="NinePatchRect" parent="HBoxContainer"]
+margin_left = 744.0
+margin_right = 1464.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 720, 0 )
+
+[node name="ship_image" type="TextureRect" parent="HBoxContainer/Right Container"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -217.965
+margin_top = 120.728
+margin_right = 264.035
+margin_bottom = 593.728
+texture = ExtResource( 3 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left_change" type="TextureButton" parent="HBoxContainer/Right Container"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 136.929
+margin_top = 83.2734
+margin_right = 196.929
+margin_bottom = 283.273
+rect_rotation = -180.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right_change" type="TextureButton" parent="HBoxContainer/Right Container"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -94.334
+margin_top = -95.8226
+margin_right = -34.334
+margin_bottom = 104.177
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="light" type="Sprite" parent="."]
+position = Vector2( 720.83, 360.08 )
+scale = Vector2( 7.49191, 5.64275 )
+texture = ExtResource( 4 )
+[connection signal="pressed" from="HBoxContainer/LeftContainer/Classic" to="." method="_on_Classic_pressed"]
+[connection signal="pressed" from="HBoxContainer/LeftContainer/Basic" to="." method="_on_Basic_pressed"]
+[connection signal="pressed" from="HBoxContainer/LeftContainer/Play_button" to="." method="_on_Play_button_pressed"]
